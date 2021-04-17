@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- Binance group project -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+     <title>Phoenix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <script src="index.js"></script>
+  </head>
+  <body>
+<header>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo" ><img class="mainlogo" src="images/logo.png"> PHOENIX</label>
+      <ul>
+        <li onclick="return hideall();"><a class="active" href="#">
+		Home</a></li>
+        <li onclick="return show('balancepage', 'stakepage', 'withdrawpage');"><a  href="#">
+		Balance</a></li>
+        <li onclick="return show('stakepage', 'withdrawpage', 'balancepage');"><a  href="#">
+		Deposit/Stake</a></li>
+        <li onclick="return show('withdrawpage', 'balancepage', 'stakepage');"><a  href="#">
+		Withdraw</a></li>
+      </ul>
+    </nav>
+</header>
+<main>
+    <section id="sitebranding">
+								<img id="sitebrand" src="images/phoenix.png" alt="Phoenix">
+								<a href=""><p id="tagline" class="button">Connect wallet</p></a>
+</section>
+<!--<section class="connect">
+  <p class="button">Connect walle</p>
+</section>-->
+<section id="count">
+<div class="container">
+    <div id="staked">
+        <h4>Total staked:</h4>
+        <br><br>
+        <p>XXX.XX PHX</p>
+    </div>
+    <div id="users">
+        <h4>Number of Phoenix:</h4> <br>
+       <p>XXXXX</p>
+        
+    </div>
+    
+</div>
+</section>
+
+<section id="balancepage">
+  <div class="body">
+    <h4> Your balance is 0.00 PHX</h4><br><br>
+    <button onclick="return hideall()">Close</button>
+  </div>
+</section>
+<section id="stakepage">
+  <div class="body">
+    <form>
+      <h4><label>Enter amount to stake:</label></h4>
+      <input type="number" name="stake"> 
+      <button>Stake</button><br><br><br>
+	  <h4>Not enough PHX ?, faucet coming soon...</h4>
+      <!--<h4>Not enough PHX ?, Deposit now with one click</h4>
+      <input type="number" name="deposit">
+      <button>Deposit</button>-->
+    </form><br><br>
+    <button onclick="return hideall()">Close</button>
+  </div>
+</section>
+<section id="withdrawpage">
+  <div class="body">
+    <form>
+      <h4><label>How much do you want to withdraw ?</label></h4>
+      <input type="number" name="withdraw"> <button>Withdraw</button>
+    </form><br><br>
+    <button onclick="return hideall()">Close</button>
+  </div>
+</section>
+
+<footer>
+    <div class="footers">
+    				<p>Follow the Phoenix team:</p>
+            <br>
+    				<p>
+    				 <a href="https://t.me/"> <img class="logos" src="images/telegram.png" alt="telegram"> </a>
+    				<a href="https://linkedin.com/in/"> <img class="logos" src="images/li.png" alt="Linkedin"> </a>
+    				<a href="https://github.com/"> <img class="logos" src="images/github.png" alt="Github"> </a>
+    				<a href="https://twitter.com/"><img class="logos" src="images/twitter.png" alt="Twitter"> </a>
+    				</p>
+    </div>
+    <br>
+    <div class="footers">
+    				<p>Phoenix &copy; 2021</p>
+    				<p>All right reserved</p>
+    </div>
+</footer>
+				
+</main>
+  </body>
+</html>
