@@ -2,13 +2,14 @@
 Compile Test
 the Phoenix.sol was compiled using chainde / bscide.com
 using compiler version v0.6.2+commit.bacdbe57
-phoenix.sol-compile1.jpg
+https://i.ibb.co/MgxRcdq/phoenix-sol-compile1.jpg
 
 The code got compiled without any error
 TokenFarm.sol
 compiled  using compiler version v0.6.2+commit.bacdbe57
 The code got compiled without any error
-TokenFarm Compile success.jpg
+
+https://i.ibb.co/Rv7PZHt/Token-Farm-Compile-success.jpg
 TokenFarm.sol
 Deploy & Interact
 TokenFarm.sol Deploy & Interact
