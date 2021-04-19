@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- Binance group project -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+     <title>Phoenix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <script src="index.js"></script>
+  </head>
+  <body>
+<header>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo" ><img class="mainlogo" src="images/logo.png"> PHOENIX</label>
+      <ul>
+        <li onclick="return hideall();"><a class="active" href="index.html">
+		Home</a></li>
+        <li onclick="return show('balancepage', 'stakepage', 'withdrawpage');"><a  href="#">
+		Balance</a></li>
+        <li onclick="return show('stakepage', 'withdrawpage', 'balancepage');"><a  href="#">
+		Deposit/Stake</a></li>
+        <li onclick="return show('withdrawpage', 'balancepage', 'stakepage');"><a  href="#">
+		Withdraw</a></li>
+      </ul>
+    </nav>
+</header>
+<main>
+    <section id="sitebranding">
+								<img id="sitebrand" src="images/phoenix.png" alt="Phoenix">
+								<a href=""><p id="tagline" class="button">Connect wallet</p></a>
+</section>
+<!--<section class="connect">
+  <p class="button">Connect walle</p>
+</section>-->
+<section id="count">
+<div class="container">
+    <div id="staked">
+        <h4>Total staked:</h4>
+        <br><br>
+        <p id="totalStaked">XXX.XX PHX</p>
+    </div>
+    <div id="users">
+        <h4>Number of Phoenix:</h4> <br>
+       <p><span id="totalUsers">XXXXX</span></p>
+        
+    </div>
+    
+</div>
+</section>
+
+<section id="balancepage">
+  <div class="body">
+    <h4> Your PHX balance is <span id="phxBalance">0.00</span> PHX</h4><br>
+    <h4> And you currently have <span id="cphxBalance">0.00</span> cPHX</h4><br>
+    <button onclick="return hideall()">Close</button>
+  </div>
+</section>
+<section id="stakepage">
+  <div class="body">
+    <form>
+      <h4><label>Enter amount to stake:</label></h4>
+      <input id="stakeAmount" type="number" name="stake"> 
+      <button>Stake</button><br><br><br>
+	  <h4>Not enough PHX ?, faucet coming soon...</h4>
+      <!--<h4>Not enough PHX ?, Deposit now with one click</h4>
+      <input type="number" name="deposit">
+      <button>Deposit</button>-->
+    </form><br><br>
+    <button onclick="return hideall()">Close</button>
+  </div>
+</section>
+<section id="withdrawpage">
+  <div class="body">
+    <form>
+      <h4><label>How much do you want to withdraw ?</label></h4>
+      <input id="withdrawAmount" type="number" name="withdraw"> <button>Withdraw</button>
+    </form><br><br>
+    <button onclick="return hideall()">Close</button>
+  </div>
+</section>
+
+<footer>
+    <div class="footers">
+    				<p>Follow the Phoenix team:</p>
+            <br>
+    				<p>
+    				 <a href="https://t.me/"> <img class="logos" src="images/telegram.png" alt="telegram"> </a>
+    				<a href="https://linkedin.com/in/"> <img class="logos" src="images/li.png" alt="Linkedin"> </a>
+    				<a href="https://github.com/"> <img class="logos" src="images/github.png" alt="Github"> </a>
+    				<a href="https://twitter.com/"><img class="logos" src="images/twitter.png" alt="Twitter"> </a>
+    				</p>
+    </div>
+    <br>
+    <div class="footers">
+    				<p>Phoenix &copy; 2021</p>
+    				<p>All right reserved</p>
+    </div>
+</footer>
+				
+</main>
+<script>
+
+    const phxabi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"subtractedValue","type":"uint256"}],"name":"decreaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"addedValue","type":"uint256"}],"name":"increaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"}];
+    const cphxabi = [{"inputs":[{"internalType":"address","name":"_token","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"balance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"subtractedValue","type":"uint256"}],"name":"decreaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"deposit","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"addedValue","type":"uint256"}],"name":"increaseAllowance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"token","outputs":[{"internalType":"contract IERC20","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"}];
+    const cphxaddress = "0xe25fF9861226370F4aF7755C185D2bA9888312a2";
+    const phxaddress = "0xf5f259cab1ae2e7f6b37e5ef1c383b0c4272b970";
+    window.addEventListener('load',function() {
+        if (window.ethereum) {
+            window.web3 = new Web3(window.ethereum);
+            window.ethereum.enable();
+            return true;
+        }
+        return false;
+
+        start();
+    })
+
+    function start() {
+        let user = window.web3.eth.account[0];
+        console.log(user);
+    }
+
+    function Balance() {
+
+    }
+    function deposit() {
+
+    }
+
+    function Withdraw() {
+
+    }
+</script>
+  </body>
+</html>
